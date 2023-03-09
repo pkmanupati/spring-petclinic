@@ -9,7 +9,7 @@ pipeline {
 				}
 			}
 			steps {
-				sh 'docker --version'
+				sh 'cat /etc/os-release'
 			}
 		}
 	}
