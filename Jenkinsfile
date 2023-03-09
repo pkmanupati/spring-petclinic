@@ -9,8 +9,17 @@ pipeline {
 				}
 			}
 			steps {
-				sh 'cat /etc/os-release'
+				sh 'mvn clean install'
 			}
+		}
+                
+                 stage('Docker build') {
+                         
+                         agent any
+                         
+                         steps {
+                                sh 'docker build -t demo/spring-petclinic:latest .'
+                        }
 		}
 	}
 }
